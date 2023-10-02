@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table, th, tr, td {
+        border: 2px solid black;
+        border-collapse: collapse;
+    }
+</style>
+<body>
+    <fieldset>
+        <legend>Form Student</legend>
+        
+        <li>
+            Fullname <input id="Fullname" type="text" />
+        </li>
+        <li>
+            Age <input id="Age" type="number" />
+        </li>
+        <li>
+            Email <input id="Email" type="text" />
+        </li>
+        <button type="button" onclick="addOrUpdateStudent()">Submit</button>
+        <table>
+            <thead>
+                <tr style="background-color: aqua;">
+                    <th>No</th>
+                    <th>Fullname</th>
+                    <th>Age</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="studentTableBody">
+            </tbody>
+        </table>
+        <input type="hidden" id="editIndex" value="-1">
+    </fieldset>
+</body>
+<script>
+    let studentData = [];
+    let lastID =0;
+
+    function addOrUpdateStudent() {
+        let Fullname = document.getElementById("Fullname").value;
+        let Age = parseInt(document.getElementById("Age").value);
+        let Email = document.getElementById("Email").value;
+        lastID++; // untuk meambahkan id 
+        let editIndex = parseInt(document.getElementById("editIndex").value);
+
+        if (Fullname && Age && Email) {
+            if (editIndex === -1) {
+                // Tambah data new student
+                let student = {
+                    Fullname: Fullname,
+                    Age: Age,
+                    Email: Email
+                };
+                studentData.push(student);
+            } else {
+                // Update edit student
+                studentData[editIndex].Fullname = Fullname;
+                studentData[editIndex].Age = Age;
+                studentData[editIndex].Email = Email;
+                document.getElementById("editIndex").value = -1; // Reset edit index
+            }
+
+            updateTable();
+
+            // Hapus input kolom setelah di submit
+            document.getElementById("Fullname").value = "";
+            document.getElementById("Age").value = "";
+            document.getElementById("Email").value = "";
+        }
+    }
+
+    function updateTable() {
+        let tableBody = document.getElementById("studentTableBody");
+        tableBody.innerHTML = "";
+
+        for (let i = 0; i < studentData.length; i++) {
+            let row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${i + 1}</td>
+                <td>${studentData[i].Fullname}</td>
+                <td>${studentData[i].Age}</td>
+                <td>${studentData[i].Email}</td>
+                <td>
+                    <button onclick="editStudent(${i})">Edit</button>
+                    <button onclick="deleteStudent(${i})">Hapus</button>
+                </td>
+            `;
+            tableBody.appendChild(row);
+        }
+    }
+
+    function editStudent(index) {
+        document.getElementById("Fullname").value = studentData[index].Fullname;
+        document.getElementById("Age").value = studentData[index].Age;
+        document.getElementById("Email").value = studentData[index].Email;
+        document.getElementById("editIndex").value = index;
+    }
+
+    function deleteStudent(index) {
+        if (confirm("Apakah kamu yakin ingin menghapus data ini?")) {
+            studentData.splice(index, 1);
+            updateTable();
+        }
+    }
+</script>
+</html>

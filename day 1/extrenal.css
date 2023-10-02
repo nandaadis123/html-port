@@ -1,0 +1,58 @@
+/*   */
+body {
+    background-color: var(--colour-primary);
+    color: var(--colour-secondary);
+}
+
+:root {
+    --colour-primary:rgb(232, 223, 223);
+    --colour-secondary:rgb(255, 77, 0);
+}
+
+
+/* selector */
+/* all selector */
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/* Tag selector */
+div{
+    background-color: aqua;
+}
+
+/* ID selector */
+#navbar{
+    background-color: aquamarine;
+}
+#content{
+    text-align: center;
+    background-color: yellow;
+}
+
+/* class selector */
+.font-bold{
+    font-weight: bold;
+}
+
+/* child selector */
+div > p{
+    color: black;
+}
+
+#section-1 >p> span{
+    color: blue;
+}
+
+/* psoudo-class selector */
+#section-2:hover{
+    background-color:blueviolet;
+}
+#section-2{
+    /*padding: 10px; untuk semua sisi*/
+    padding: 10px 20px;
+}
+#section-2 > p {
+ /* margin : 10px */
+}

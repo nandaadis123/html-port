@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- input id ="username" type="text" value="andrew01" -->
+    <input id="angka1" type="number"/>
+    <input id="angka2" type="number"/>
+    <button onclick="getNumber()">Get Number</button>
+    <h3 id="result"></h3>
+</body>
+<script>
+    let username = document.getElementById("username").value;
+
+    function getNumber(){
+        let angka1 = parseInt(document.getElementById("angka1").value);
+        let angka2 = parseInt(document.getElementById("angka2").value);
+        document.getElementById("result").innerHTML = angka1 + angka2;
+        console.log(typeof angka1);
+    }
+</script>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table, th,tr,td{
+        border: 2px solid black;
+        border-collapse: collapse ;
+    }
+</style>
+<body>
+    <fieldset>
+    <legend>From Student</legend>
+    <li>
+     Fullname <input id="Fullname" type="string"/>
+    </li>
+    <li>
+        Age <input id="Age" type="number"/>
+    </li>
+    <li>
+        Email <input id="Email" type="text"/>
+    </li>
+    <button onclick="getNumber()">Submit</button>
+    <h3 id="result"></h3>
+    <table>
+        <thead>
+            <tr>
+                <th> No </th>
+                <th> Fullname </th>
+                <th> Age </th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><h1 id= "Fullname"</h1></td>
+                <td ></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    </fieldset>
+
+</body>
+<script>
+
+    function getNumber(){
+        let Fullname = document.getElementById("Fullname").value;
+        let Age = parseInt(document.getElementById("Age").value);
+        let Email = document.getElementById("Email").value;
+       // document.getElementById("result").innerHTML = Fullname ;
+    
+    }
+</script>
+</html>

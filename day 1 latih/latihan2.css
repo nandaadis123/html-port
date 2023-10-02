@@ -1,0 +1,19 @@
+img{
+    margin: auto;
+    height: 200px;
+    width: 400px;
+    border-radius: 5%;
+}
+div{
+   margin: auto;
+    width: 400px;
+    text-align: center;
+    border-radius: 5%;
+}
+button{
+    margin-bottom: 10px;
+    text-align: center;
+    height: 30px;
+    width: 80px;
+
+}

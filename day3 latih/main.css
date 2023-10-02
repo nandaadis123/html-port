@@ -1,0 +1,113 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+}
+#kanan{
+    background-color:aqua ;
+    display: flex;
+    /* width: 100%; */
+    padding: 15px;
+    list-style: none; 
+    justify-content: space-evenly; 
+    flex-grow: 3;
+    
+    
+}
+#kiri{
+    background-color: aquamarine;
+    display: flex;
+    /* width: 100%; */
+    padding: 15px;
+    list-style: none; 
+    justify-content: space-evenly;
+    flex-grow:1;
+
+}
+.container {
+    display: flex;
+    align-items: center; 
+  }
+
+.main{
+    text-align: center;
+    padding: 250px;
+    background-color: antiquewhite;
+    font-size: 50px;
+    
+
+  }
+
+  #class1, #class2 {
+    display: flex;
+  }
+ 
+
+  .box {
+    display: flex;
+    width: 100%;
+    height: auto;
+    /* justify-content: space-between; Membagi ruang secara merata */
+    
+  }
+  
+  .block1{
+    background-color: tomato;
+    padding: 50px;
+    width: 25%;
+  }
+  .block2{
+    background-color: rgb(232, 232, 167);
+    padding: 50px;
+    width: 25%;
+  }
+  .block3{
+    background-color: white;
+    padding: 50px;
+    width: 25%;
+  }
+  .block4{
+    background-color: darkgrey;
+    padding: 50px;
+    width: 25%;
+  }
+.box-bawah1{
+    background-color: chocolate;
+    display: flex;
+    flex-grow: 1;
+    height: 400px;
+}
+.box-bawah2{
+    background-color: blueviolet;
+    display: flex;
+    flex-grow: 3;
+    height: 400px;
+}
+.container2 {
+    display: flex;     
+   }
+.lingkaran{
+position: fixed;
+border-radius: 100%;
+width: 25px;
+height: 25px;
+background-color: black;
+right: 20px;
+bottom: 25px;
+
+}
+
+@media screen and (min-width:1000px){
+    .box {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        width: auto;
+        
+      }
+      
+}
